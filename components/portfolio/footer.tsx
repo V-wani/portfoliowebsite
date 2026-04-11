@@ -7,8 +7,15 @@ export function Footer() {
     <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-border">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} Vaibhav Wani. All rights reserved.
+          <p className="text-sm text-muted-foreground flex items-center gap-1">
+            &copy; {currentYear} Vaibhav Wani. Founder of{" "}
+            <a 
+                href="https://primewebtech.online" 
+                target="_blank" 
+                className="text-foreground hover:text-primary underline decoration-primary/30"
+            >
+                Prime Web Tech
+            </a>
           </p>
           <div className="flex items-center gap-4">
             <a

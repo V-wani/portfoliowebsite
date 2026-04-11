@@ -5,25 +5,42 @@ import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] })
-const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'] })
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], display: 'swap' })
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], display: 'swap' })
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Vaibhav Wani",
+  "alternateName": "V Wani",
+  "url": "https://vwani.in",
+  "image": "https://vwani.in/vaibhav-wani-ai-developer.jpg",
+  "sameAs": [
+    "https://github.com/V-wani",
+    "https://www.linkedin.com/in/vaibhavwani17"
+  ],
+  "jobTitle": "AI Developer & Tech Entrepreneur",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Prime Web Tech"
+  },
+  "description": "AI Developer and Tech Entrepreneur specializing in scalable AI solutions and modern web development."
+}
 
 export const metadata: Metadata = {
-  title: 'Vaibhav Wani | AI/ML Enthusiast & Frontend Developer',
+  title: 'Vaibhav Wani (V Wani) | AI Website Developer | Founder of Prime Web Tech',
   description:
-    'Vaibhav Wani is an engineering student and AI/ML enthusiast focused on data analysis, computer vision, and modern web development. Explore projects, skills, and professional journey.',
+    'Vaibhav Wani (V Wani) is a Computer Science engineering student, AI Developer, and Tech Entrepreneur specializing in scalable AI solutions and web development.',
   keywords: [
     'Vaibhav Wani',
-    'Vaibhav Wani portfolio',
-    'Vaibhav Wani developer',
-    'Vaibhav Wani AI ML',
-    'AI/ML Enthusiast',
-    'Machine Learning',
-    'Computer Vision',
-    'Frontend Developer',
-    'React Developer',
-    'Python Developer',
-    'Data Analysis',
+    'V Wani',
+    'Vaibhav Wani AI Developer',
+    'Founder of Prime Web Tech',
+    'AI Website Developer',
+    'Prime Web Tech',
+    'AI Solutions Developer',
+    'Custom AI Websites',
+    'Web Development Specialist',
   ],
   authors: [{ name: 'Vaibhav Wani', url: 'https://vwani.in' }],
   creator: 'Vaibhav Wani',
@@ -36,25 +53,25 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://vwani.in',
-    siteName: 'Vaibhav Wani - Portfolio',
-    title: 'Vaibhav Wani | AI/ML Enthusiast & Frontend Developer',
+    siteName: 'Vaibhav Wani - Personal Portfolio',
+    title: 'Vaibhav Wani (V Wani) | AI Website Developer | Founder of Prime Web Tech',
     description:
-      'Vaibhav Wani is an engineering student and AI/ML enthusiast focused on data analysis, computer vision, and modern web development.',
+      'Official portfolio of Vaibhav Wani. AI Website Developer & Founder of Prime Web Tech. Building scalable digital solutions.',
     images: [
       {
-        url: 'https://vwani.in/og-image.png',
+        url: 'https://vwani.in/vaibhav-wani-ai-developer.jpg',
         width: 1200,
         height: 630,
-        alt: 'Vaibhav Wani - AI/ML Enthusiast & Frontend Developer Portfolio',
+        alt: 'Vaibhav Wani - AI Website Developer & Founder of Prime Web Tech',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Vaibhav Wani | AI/ML Enthusiast & Frontend Developer',
+    title: 'Vaibhav Wani (V Wani) | AI Website Developer | Founder of Prime Web Tech',
     description:
-      'Vaibhav Wani is an engineering student and AI/ML enthusiast focused on data analysis, computer vision, and modern web development.',
-    images: ['https://vwani.in/og-image.png'],
+      'AI Website Developer & Founder of Prime Web Tech. Specialized in custom web solutions.',
+    images: ['https://vwani.in/vaibhav-wani-ai-developer.jpg'],
     creator: '@vaibhavwani',
   },
   robots: {
@@ -90,7 +107,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className="font-sans antialiased">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className="font-sans antialiased text-foreground bg-background">
         <ThemeProvider defaultTheme="system" storageKey="portfolio-theme">
           {children}
         </ThemeProvider>

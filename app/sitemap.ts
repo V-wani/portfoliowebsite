@@ -11,5 +11,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1.0,
     },
+    {
+      url: `${baseUrl}/vaibhav-wani`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+        url: `${baseUrl}/prime-web-tech`,
+        lastModified,
+        changeFrequency: 'monthly',
+        priority: 0.8,
+    },
   ]
 }

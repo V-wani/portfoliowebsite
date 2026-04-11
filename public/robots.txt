@@ -1,18 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
-# Vaibhav Wani Portfolio - https://vwani.in
-
 User-agent: *
 Allow: /
 
-# Allow crawling of all resources
-Allow: /*.js$
-Allow: /*.css$
-Allow: /*.png$
-Allow: /*.jpg$
-Allow: /*.jpeg$
-Allow: /*.gif$
-Allow: /*.svg$
-Allow: /*.webp$
-
-# Sitemap location
 Sitemap: https://vwani.in/sitemap.xml

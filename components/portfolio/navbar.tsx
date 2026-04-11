@@ -8,12 +8,10 @@ import { Button } from '@/components/ui/button'
 import { useTheme } from '@/components/theme-provider'
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#journey', label: 'AI Journey' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#about', label: 'About' },
+  { href: '/vaibhav-wani', label: 'V Wani (Hub)' },
+  { href: '/#projects', label: 'Projects' },
+  { href: '/#contact', label: 'Contact' },
 ]
 
 export function Navbar() {

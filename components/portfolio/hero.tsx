@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowDown, Github, Linkedin, Mail, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Text_03 } from '@/components/ui/wave-text'
 
 const typingTexts = [
   'Data Analysis',
@@ -84,6 +85,7 @@ export function Hero() {
             <span className="text-sm font-medium text-primary">AI/ML Enthusiast</span>
           </motion.div>
 
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -91,20 +93,21 @@ export function Hero() {
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4 text-balance"
           >
             Hi, I'm{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-              Vaibhav Wani
-            </span>
+            <Text_03 
+              text="Vaibhav Wani" 
+              className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/80 to-accent"
+            />
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-lg sm:text-xl text-muted-foreground mb-6 text-pretty"
+            className="text-lg sm:text-xl text-muted-foreground mb-6 text-pretty font-medium"
           >
-            AI/ML Enthusiast & Frontend Developer
+            AI Developer & Tech Entrepreneur
             <br />
-            building data-driven and computer vision systems.
+            <span className="text-foreground/60">Building scalable digital solutions and AI-driven systems.</span>
           </motion.p>
 
           {/* Typing Effect */}
@@ -114,7 +117,7 @@ export function Hero() {
             transition={{ delay: 0.5 }}
             className="h-12 flex items-center justify-center mb-8"
           >
-            <span className="font-mono text-lg sm:text-xl text-primary">
+            <span className="font-mono text-lg sm:text-xl text-primary font-bold">
               {'> '}
               {displayText}
               <span className="animate-pulse">|</span>
@@ -131,7 +134,7 @@ export function Hero() {
             <Button
               asChild
               size="lg"
-              className="group relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="group relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(var(--primary),0.3)] font-bold rounded-full px-8"
             >
               <a href="#projects">
                 <span className="relative z-10 flex items-center">
@@ -140,10 +143,10 @@ export function Hero() {
                 </span>
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="group bg-transparent">
-              <a href="#journey">
-                My AI Journey
-                <Sparkles className="ml-2 h-4 w-4 group-hover:rotate-12 transition-transform" />
+            <Button asChild variant="outline" size="lg" className="group bg-transparent hover:scale-105 transition-all rounded-full px-8 border-border text-foreground font-bold hover:bg-muted/50">
+              <a href="/my-resume-vaibhav-wani.pdf" target="_blank" rel="noopener noreferrer">
+                View Resume
+                <svg className="ml-2 h-4 w-4 group-hover:translate-y-[-2px] transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               </a>
             </Button>
           </motion.div>
@@ -167,7 +170,7 @@ export function Hero() {
                 rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-3 text-muted-foreground hover:text-foreground transition-colors rounded-xl bg-card border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
+                className="p-3 text-muted-foreground hover:text-primary transition-colors rounded-xl bg-muted/30 border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
                 aria-label={label}
               >
                 <Icon className="h-5 w-5" />
